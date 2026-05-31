@@ -1,1 +1,72 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>⚠ Billini EOFY Death Clock ⚠</title> <meta name="description" content="30,000 Units • 4,000 Accessories • 5,000+ Orders"> <meta property="og:title" content="⚠ Billini EOFY Death Clock ⚠"> <meta property="og:description" content="30,000 Units • 4,000 Accessories • 5,000+ Orders"> <meta property="og:type" content="website"> <!-- UPDATE THESE LATER --> <meta property="og:url" content="https://YOURDOMAIN.com"> <meta property="og:image" content="https://YOURDOMAIN.com/eofy-preview.jpg"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="⚠ Billini EOFY Death Clock ⚠"> <meta name="twitter:description" content="May God Have Mercy On Our Souls"> <meta name="twitter:image" content="https://YOURDOMAIN.com/eofy-preview.jpg"> <style> *{ box-sizing:border-box; } body{ margin:0; background:#000; color:#E8C3AE; font-family:Arial,sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; text-align:center; overflow:hidden; } .container{ width:100%; max-width:1200px; padding:20px; } h1{ font-size:clamp(32px,8vw,80px); margin-bottom:10px; text-transform:uppercase; letter-spacing:3px; text-shadow:0 0 20px red; } h3{ font-size:clamp(18px,4vw,28px); margin-top:0; color:white; } .subtitle{ font-size:clamp(18px,4vw,28px); color:white; margin:30px 0; } #countdown{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:15px; max-width:900px; margin:auto; } .time-box{ background:#111; border:5px solid #E8C3AE; border-radius:20px; padding:20px; box-shadow:0 0 20px rgba(255,0,0,0.4); } .number{ font-size:clamp(42px,10vw,72px); font-weight:bold; } .label{ font-size:clamp(14px,3vw,20px); color:#ccc; margin-top:10px; } .warning{ margin-top:40px; font-size:clamp(18px,4vw,32px); color:white; } .footer{ margin-top:20px; font-size:clamp(16px,3vw,22px); color:#999; } .apocalypse-button{ font-size:clamp(22px,5vw,36px); padding:20px 40px; border:none; border-radius:12px; background:red; color:white; cursor:pointer; font-weight:bold; box-shadow:0 0 30px red; margin-top:40px; } .apocalypse-button:hover{ transform:scale(1.05); } </style> </head> <body> <div class="container"> <h1>Billini EOFY Sale Begins</h1> <h3>Warehouse Souls Descend Into Madness</h3> <div class="subtitle"> Time Remaining Until Wednesday 6:00 PM </div> <div id="countdown"> <div class="time-box"> <div class="number" id="days">0</div> <div class="label">Days</div> </div> <div class="time-box"> <div class="number" id="hours">0</div> <div class="label">Hours</div> </div> <div class="time-box"> <div class="number" id="minutes">0</div> <div class="label">Minutes</div> </div> <div class="time-box"> <div class="number" id="seconds">0</div> <div class="label">Seconds</div> </div> </div> <div class="warning"> ⚠ 30,000 Units • EOFY • Construction Site Basement • Overstocked Main Warehouse • Understaffed ⚠ </div> <div class="footer"> May God Have Mercy On Our Souls </div> </div> <script> // CHANGE TO YOUR TARGET DATE const targetDate = new Date("2026-06-03T18:00:00+10:00"); function apocalypseMode(){ document.body.innerHTML = ` <div style=" position:fixed; top:0; left:0; width:100%; height:100%; background:black; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px; "> <h1 style=" font-size:clamp(48px,12vw,140px); color:red; margin:0; text-shadow:0 0 40px red; "> IT HAS BEGUN </h1> <h2 style=" font-size:clamp(24px,6vw,60px); color:white; margin-top:20px; "> EOFY IS LIVE </h2> <div style=" font-size:clamp(20px,4vw,34px); color:#ffcc00; margin-top:40px; "> ⚠ 30,000 UNITS ⚠ </div> <div style=" font-size:clamp(20px,4vw,34px); color:#ffcc00; "> ⚠ 4,000 ACCESSORIES ⚠ </div> <div style=" font-size:clamp(20px,4vw,34px); color:#ffcc00; "> ⚠ 5,000+ ORDERS ⚠ </div> <div style=" font-size:clamp(18px,3vw,28px); color:white; margin-top:40px; "> MAY GOD HAVE MERCY ON OUR SOULS </div> <button class="apocalypse-button" onclick="startApocalypse()"> ENTER THE APOCALYPSE </button> </div> `; } function startApocalypse(){ document.body.innerHTML = ` <div style=" position:fixed; top:0; left:0; width:100%; height:100%; overflow:hidden; background:black; "> <iframe src="https://www.youtube.com/embed/3wxWNAM8Cso?autoplay=1&mute=0&controls=0&start=177&end=214&loop=1&playlist=3wxWNAM8Cso&rel=0" allow="autoplay; encrypted-media; fullscreen" style=" position:absolute; top:50%; left:50%; width:100vw; height:56.25vw; min-height:100vh; min-width:177.78vh; transform:translate(-50%,-50%); border:none; z-index:1; "> </iframe> <div style=" position:absolute; top:0; left:0; width:100%; height:100%; display:flex; justify-content:center; align-items:center; background:rgba(0,0,0,0.15); z-index:2; pointer-events:none; "> <h1 style=" font-size:clamp(48px,12vw,140px); color:red; text-shadow:0 0 40px red; margin:0; "> IT HAS BEGUN </h1> </div> </div> `; } function updateClock(){ const now = new Date(); const difference = targetDate - now; if(difference <= 0){ clearInterval(window.countdownTimer); apocalypseMode(); return; } const days = Math.floor(difference / (1000*60*60*24)); const hours = Math.floor((difference / (1000*60*60)) % 24); const minutes = Math.floor((difference / (1000*60)) % 60); const seconds = Math.floor((difference / 1000) % 60); document.getElementById("days").textContent = days; document.getElementById("hours").textContent = hours; document.getElementById("minutes").textContent = minutes; document.getElementById("seconds").textContent = seconds; } updateClock(); window.countdownTimer = setInterval(updateClock,1000); </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billini EOFY Death Clock</title>
+<style>
+body{margin:0;background:#000;color:#E8C3AE;font-family:Arial,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;text-align:center}
+.container{max-width:1200px;padding:20px;width:100%}
+h1{font-size:clamp(36px,8vw,80px);text-shadow:0 0 20px red}
+#countdown{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;max-width:900px;margin:auto}
+.box{background:#111;border:4px solid #E8C3AE;border-radius:16px;padding:20px}
+.num{font-size:clamp(40px,10vw,72px);font-weight:bold}
+button{padding:20px 40px;font-size:28px;background:red;color:#fff;border:none;border-radius:12px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Billini EOFY Sale Begins</h1>
+<h3>Warehouse Souls Descend Into Madness</h3>
+<div id="countdown">
+<div class="box"><div class="num" id="days">0</div>Days</div>
+<div class="box"><div class="num" id="hours">0</div>Hours</div>
+<div class="box"><div class="num" id="minutes">0</div>Minutes</div>
+<div class="box"><div class="num" id="seconds">0</div>Seconds</div>
+</div>
+</div>
+
+<script>
+function nextWednesday6PM(){
+  const now = new Date();
+  const target = new Date(now);
+  const day = now.getDay(); // 0=Sun,3=Wed
+  let daysUntil = (3 - day + 7) % 7;
+  if(daysUntil === 0 && now.getHours() >= 18){ daysUntil = 7; }
+  target.setDate(now.getDate() + daysUntil);
+  target.setHours(18,0,0,0);
+  return target;
+}
+
+const targetDate = nextWednesday6PM();
+
+function apocalypseMode(){
+ document.body.innerHTML=`
+ <div style="height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:black;color:white;text-align:center;padding:20px">
+ <h1 style="font-size:clamp(50px,12vw,140px);color:red">IT HAS BEGUN</h1>
+ <button onclick="startApocalypse()">ENTER THE APOCALYPSE</button>
+ </div>`;
+}
+
+function startApocalypse(){
+ document.body.innerHTML=`
+ <iframe
+ src="https://www.youtube.com/embed/3wxWNAM8Cso?autoplay=1&controls=0&start=177&end=214&loop=1&playlist=3wxWNAM8Cso"
+ allow="autoplay; encrypted-media; fullscreen"
+ style="position:fixed;inset:0;width:100%;height:100%;border:none">
+ </iframe>`;
+}
+
+function tick(){
+ const diff = targetDate - new Date();
+ if(diff <= 0){ apocalypseMode(); return; }
+ document.getElementById('days').textContent=Math.floor(diff/86400000);
+ document.getElementById('hours').textContent=Math.floor(diff/3600000)%24;
+ document.getElementById('minutes').textContent=Math.floor(diff/60000)%60;
+ document.getElementById('seconds').textContent=Math.floor(diff/1000)%60;
+}
+tick();
+setInterval(tick,1000);
+</script>
+</body>
+</html>
