@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EOFY Death Clock</title>
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    color:#ff2b2b;
+    font-family:Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+    overflow:hidden;
+}
+
+.container{
+    max-width:1200px;
+    padding:20px;
+}
+
+h1{
+    font-size:80px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    text-shadow:0 0 20px #ff0000;
+}
+
+.subtitle{
+    font-size:28px;
+    color:white;
+    margin-bottom:40px;
+}
+
+#countdown{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    background:#111;
+    border:3px solid #ff2b2b;
+    border-radius:20px;
+    padding:25px;
+    min-width:180px;
+    box-shadow:0 0 20px rgba(255,0,0,0.4);
+}
+
+.number{
+    font-size:72px;
+    font-weight:bold;
+}
+
+.label{
+    font-size:20px;
+    color:#ccc;
+    margin-top:10px;
+}
+
+.warning{
+    margin-top:50px;
+    font-size:32px;
+    color:white;
+}
+
+.footer{
+    margin-top:20px;
+    font-size:22px;
+    color:#999;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>EOFY DEATH CLOCK</h1>
+
+<div class="subtitle">
+Time Remaining Until Wednesday 6:00 PM
+</div>
+
+<div id="countdown">
+
+<div class="time-box">
+<div class="number" id="days">0</div>
+<div class="label">Days</div>
+</div>
+
+<div class="time-box">
+<div class="number" id="hours">0</div>
+<div class="label">Hours</div>
+</div>
+
+<div class="time-box">
+<div class="number" id="minutes">0</div>
+<div class="label">Minutes</div>
+</div>
+
+<div class="time-box">
+<div class="number" id="seconds">0</div>
+<div class="label">Seconds</div>
+</div>
+
+</div>
+
+<div class="warning">
+⚠ 30,000 Units • EOFY • Construction Site Basement ⚠
+</div>
+
+<div class="footer">
+"May God Have Mercy On Our Souls"
+</div>
+
+</div>
+
+<script>
+
+// SET TARGET DATE HERE
+const targetDate = new Date("2026-06-03T18:00:00+10:00");
+
+function updateClock(){
+
+    const now = new Date();
+    const difference = targetDate - now;
+
+    if(difference <= 0){
+
+        document.body.innerHTML = `
+        <div style="
+        text-align:center;
+        color:red;
+        font-family:Arial;
+        ">
+            <h1 style="font-size:100px;">IT HAS BEGUN</h1>
+            <h2>GOOD LUCK</h2>
+        </div>
+        `;
+        return;
+    }
+
+    const days = Math.floor(difference / (1000*60*60*24));
+    const hours = Math.floor((difference / (1000*60*60)) % 24);
+    const minutes = Math.floor((difference / (1000*60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+}
+
+updateClock();
+setInterval(updateClock,1000);
+
+</script>
+
+</body>
+</html>
