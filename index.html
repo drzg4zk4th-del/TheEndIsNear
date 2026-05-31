@@ -112,19 +112,104 @@ Unfortunately the events depicted are based on true stories.
 const targetDate = new Date("2026-06-03T18:00:00+10:00");
 
 function startApocalypse(){
-document.body.innerHTML=`<div style="height:100vh;background:black;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center">
-<h1 style="color:red">IT HAS BEGUN</h1>
-<h2>EOFY IS LIVE</h2>
-<p>30,000 UNITS</p>
-<p>4,000 UNSORTED ACCESSORIES</p>
-<p>THOUSANDS OF ORDERS</p>
-<p>MAY GOD HAVE MERCY ON OUR SOULS</p>
-<button
-class="apocalypse-button"
-onclick="playVideo()">
-ENTER THE APOCALYPSE
-</button>
-</div>`;
+
+let countdown = 10;
+
+document.body.innerHTML = `
+
+<div style="
+height:100vh;
+background:black;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+">
+
+<h1 style="
+font-size:clamp(60px,12vw,150px);
+color:red;
+text-shadow:0 0 40px red;
+margin:0;
+">
+IT HAS BEGUN
+</h1>
+
+<h2 style="
+font-size:clamp(24px,6vw,60px);
+margin-top:20px;
+">
+EOFY IS LIVE
+</h2>
+
+<div style="
+font-size:clamp(20px,4vw,34px);
+color:#ffcc00;
+margin-top:30px;
+">
+⚠ 30,000 MIXED RETURNS ⚠
+</div>
+
+<div style="
+font-size:clamp(20px,4vw,34px);
+color:#ffcc00;
+">
+⚠ 4,000 UNSORTED ACCESSORIES ⚠
+</div>
+
+<div style="
+font-size:clamp(20px,4vw,34px);
+color:#ffcc00;
+">
+⚠ THOUSANDS OF ORDERS ⚠
+</div>
+
+<div style="
+font-size:clamp(24px,5vw,50px);
+color:red;
+margin-top:50px;
+font-weight:bold;
+">
+Redirecting to Apocalypse in
+<span id="redirectTimer">10</span>
+</div>
+
+<div style="
+margin-top:30px;
+font-size:clamp(18px,3vw,28px);
+color:white;
+">
+MAY GOD HAVE MERCY ON OUR SOULS
+</div>
+
+</div>
+
+`;
+
+const timer = setInterval(() => {
+
+countdown--;
+
+const timerElement = document.getElementById("redirectTimer");
+
+if(timerElement){
+timerElement.textContent = countdown;
+}
+
+if(countdown <= 0){
+
+clearInterval(timer);
+
+window.location.href =
+"https://www.youtube.com/watch?v=3wxWNAM8Cso&t=177s";
+
+}
+
+},1000);
+
 }
 
 function playVideo(){
