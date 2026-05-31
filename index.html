@@ -38,6 +38,56 @@ input[type=range]{width:100%}
 </audio>
   
 <body>
+
+<div id="soundGate" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+z-index:99999;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+">
+
+<h1 style="
+color:red;
+font-size:clamp(40px,8vw,100px);
+text-shadow:0 0 20px red;
+">
+⚠ WARNING ⚠
+</h1>
+
+<h2 style="
+color:white;
+font-size:clamp(20px,4vw,40px);
+">
+This website contains loud warehouse noises,
+emotional damage,
+and EOFY content.
+</h2>
+
+<button onclick="startSite()"
+style="
+margin-top:40px;
+padding:20px 50px;
+font-size:32px;
+background:red;
+color:white;
+border:none;
+border-radius:15px;
+cursor:pointer;
+box-shadow:0 0 20px red;
+">
+ENTER AT YOUR OWN RISK
+</button>
+
+</div>
+  
 <div class="container">
 <h1>⚠ EOFY DEATH CLOCK ⚠</h1>
 <h3>THE BASEMENT DESCENDS INTO MADNESS</h3>
@@ -270,5 +320,27 @@ console.log("Browser blocked autoplay");
 
 </script>
 
+function startSite(){
+
+const music =
+document.getElementById("eofyMusic");
+
+if(music){
+
+music.volume = 0.5;
+
+music.play().catch(err=>{
+console.log(err);
+});
+
+}
+
+document.getElementById("soundGate")
+.style.display = "none";
+
+}
+
+</script>
+  
 </body>
 </html>
