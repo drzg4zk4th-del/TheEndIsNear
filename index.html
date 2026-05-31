@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Billini EOFY Sale Begins</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>⚠ Billini EOFY Death Clock ⚠</title>
+
+<meta name="description" content="30,000 Units • 4,000 Accessories • 5,000+ Orders">
+
+<meta property="og:title" content="⚠ Billini EOFY Death Clock ⚠">
+<meta property="og:description" content="30,000 Units • 4,000 Accessories • 5,000+ Orders">
+<meta property="og:type" content="website">
+
+<!-- CHANGE THESE TO YOUR REAL URLS -->
+<meta property="og:url" content="https://YOURDOMAIN.com">
+<meta property="og:image" content="https://YOURDOMAIN.com/eofy-preview.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="⚠ Billini EOFY Death Clock ⚠">
+<meta name="twitter:description" content="May God Have Mercy On Our Souls">
+<meta name="twitter:image" content="https://YOURDOMAIN.com/eofy-preview.jpg">
 
 <style>
+
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
     background:#000;
@@ -13,68 +35,76 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
+    min-height:100vh;
     text-align:center;
     overflow:hidden;
 }
 
 .container{
+    width:100%;
     max-width:1200px;
     padding:20px;
 }
 
 h1{
-    font-size:80px;
-    margin-bottom:20px;
+    font-size:clamp(32px,8vw,80px);
+    margin-bottom:10px;
     text-transform:uppercase;
-    letter-spacing:5px;
-    text-shadow:0 0 20px #ff0000;
+    letter-spacing:3px;
+    text-shadow:0 0 20px red;
+}
+
+h3{
+    font-size:clamp(18px,4vw,28px);
+    margin-top:0;
+    color:white;
 }
 
 .subtitle{
-    font-size:28px;
+    font-size:clamp(18px,4vw,28px);
     color:white;
-    margin-bottom:40px;
+    margin:30px 0;
 }
 
 #countdown{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:15px;
+    max-width:900px;
+    margin:auto;
 }
 
 .time-box{
     background:#111;
     border:5px solid #E8C3AE;
     border-radius:20px;
-    padding:25px;
-    min-width:180px;
+    padding:20px;
     box-shadow:0 0 20px rgba(255,0,0,0.4);
 }
 
 .number{
-    font-size:72px;
+    font-size:clamp(42px,10vw,72px);
     font-weight:bold;
 }
 
 .label{
-    font-size:20px;
+    font-size:clamp(14px,3vw,20px);
     color:#ccc;
     margin-top:10px;
 }
 
 .warning{
-    margin-top:50px;
-    font-size:32px;
+    margin-top:40px;
+    font-size:clamp(18px,4vw,32px);
     color:white;
 }
 
 .footer{
     margin-top:20px;
-    font-size:22px;
+    font-size:clamp(16px,3vw,22px);
     color:#999;
 }
+
 </style>
 </head>
 
@@ -83,7 +113,8 @@ h1{
 <div class="container">
 
 <h1>Billini EOFY Sale Begins</h1>
-<h3>Warehouse Souls Descends Into Madness</h3>
+
+<h3>Warehouse Souls Descend Into Madness</h3>
 
 <div class="subtitle">
 Time Remaining Until Wednesday 6:00 PM
@@ -156,6 +187,7 @@ min-width:177.78vh;
 transform:translate(-50%,-50%);
 border:none;
 z-index:1;
+pointer-events:none;
 ">
 </iframe>
 
@@ -172,10 +204,11 @@ align-items:center;
 text-align:center;
 background:rgba(0,0,0,0.15);
 z-index:2;
+padding:20px;
 ">
 
 <h1 style="
-font-size:140px;
+font-size:clamp(48px,12vw,140px);
 color:red;
 margin:0;
 text-shadow:0 0 40px red;
@@ -184,7 +217,7 @@ IT HAS BEGUN
 </h1>
 
 <h2 style="
-font-size:60px;
+font-size:clamp(24px,6vw,60px);
 color:white;
 margin-top:10px;
 ">
@@ -192,7 +225,7 @@ EOFY IS LIVE
 </h2>
 
 <div style="
-font-size:34px;
+font-size:clamp(20px,4vw,34px);
 color:#ffcc00;
 margin-top:40px;
 ">
@@ -200,23 +233,23 @@ margin-top:40px;
 </div>
 
 <div style="
-font-size:34px;
+font-size:clamp(20px,4vw,34px);
 color:#ffcc00;
 ">
 ⚠ 4,000 ACCESSORIES ⚠
 </div>
 
 <div style="
-font-size:34px;
+font-size:clamp(20px,4vw,34px);
 color:#ffcc00;
 ">
 ⚠ 5,000+ ORDERS ⚠
 </div>
 
 <div style="
-font-size:28px;
+font-size:clamp(18px,3vw,28px);
 color:white;
-margin-top:50px;
+margin-top:40px;
 ">
 MAY GOD HAVE MERCY ON OUR SOULS
 </div>
@@ -248,7 +281,6 @@ document.getElementById("days").textContent = days;
 document.getElementById("hours").textContent = hours;
 document.getElementById("minutes").textContent = minutes;
 document.getElementById("seconds").textContent = seconds;
-
 }
 
 updateClock();
