@@ -133,20 +133,15 @@ function updateClock(){
     const now = new Date();
     const difference = targetDate - now;
 
-    if(difference <= 0){
-
-        document.body.innerHTML = `
-        <div style="
-        text-align:center;
-        color:red;
-        font-family:Arial;
-        ">
-            <h1 style="font-size:100px;">IT HAS BEGUN</h1>
-            <h2>GOOD LUCK</h2>
-        </div>
-        `;
-        return;
-    }
+   if(difference <= 0){ document.body.innerHTML = ` <div style=" position:fixed; top:0; left:0; width:100%; height:100%; overflow:hidden; background:black; "> 
+   <iframe src="https://www.youtube.com/embed/3wxWNAM8Cso?autoplay=1&controls=0&start=177&loop=1&playlist=3wxWNAM8Cso" style=" position:absolute; top:0; left:0; width:100%; height:100%; border:none; pointer-events:none; " allow="autoplay" ></iframe> 
+   <div style=" position:absolute; top:0; left:0; width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background:rgba(0,0,0,0.35); color:white; font-family:Arial,sans-serif; z-index:10; "> 
+   <h1 style=" font-size:120px; color:red; margin:0; text-shadow:0 0 30px red; "> IT HAS BEGUN </h1>
+   <h2 style=" font-size:60px; margin-top:20px; "> EOFY IS LIVE </h2> <div style=" margin-top:40px; font-size:32px; color:#ffcc00; "> ⚠ 30,000 Units ⚠ </div> <div style=" font-size:32px; color:#ffcc00; "> ⚠ 4,000 Accessories ⚠ </div> <div style=" font-size:32px; color:#ffcc00; "> ⚠ 5,000+ Orders ⚠ </div> <div style=" margin-top:50px; font-size:28px; color:#ffffff; "> MAY GOD HAVE MERCY ON OUR SOULS </div> </div> </div> `
+       ; 
+        return; 
+            
+        }
 
     const days = Math.floor(difference / (1000*60*60*24));
     const hours = Math.floor((difference / (1000*60*60)) % 24);
