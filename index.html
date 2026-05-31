@@ -32,6 +32,11 @@ h3{color:white}
 input[type=range]{width:100%}
 </style>
 </head>
+
+<audio id="eofyMusic" loop>
+<source src="snlctl1i7b136dfv9g0hd2ut.mp3" type="audio/mpeg">
+</audio>
+  
 <body>
 <div class="container">
 <h1>⚠ EOFY DEATH CLOCK ⚠</h1>
@@ -189,6 +194,12 @@ MAY GOD HAVE MERCY ON OUR SOULS
 
 `;
 
+const music = document.getElementById("eofyMusic");
+
+if(music){
+music.play().catch(() => {});
+}
+
 const timer = setInterval(() => {
 
 countdown--;
@@ -240,5 +251,24 @@ updateSanity();
 updateClock();
 setInterval(updateClock,1000);
 </script>
+
+<script>
+
+window.addEventListener("load", () => {
+
+const music = document.getElementById("eofyMusic");
+
+music.volume = 0.5;
+
+music.play().catch(() => {
+
+console.log("Browser blocked autoplay");
+
+});
+
+});
+
+</script>
+
 </body>
 </html>
